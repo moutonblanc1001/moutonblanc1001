@@ -46,10 +46,10 @@
 <body>
   <h2>お住まいの地域を選択してください</h2>
 
-  <!-- 最上部（北海道ボタン） -->
-　<button class="area-button" onclick="submitArea('北海道')">北海道</button>
+  <!-- 北海道 -->
+  <button class="area-button" onclick="submitArea('北海道')">北海道</button>
 
-  <!-- 折りたたみ形式の地方ブロック -->
+  <!-- 東北 -->
   <button class="accordion" onclick="togglePanel('tohoku')">東北地方</button>
   <div id="tohoku" class="panel">
     <select id="tohoku-pref">
@@ -64,6 +64,7 @@
     <button class="submit-button" onclick="submitSelectedPref('tohoku-pref')">送信</button>
   </div>
 
+  <!-- 関東 -->
   <button class="accordion" onclick="togglePanel('kanto')">関東地方</button>
   <div id="kanto" class="panel">
     <select id="kanto-pref">
@@ -79,6 +80,7 @@
     <button class="submit-button" onclick="submitSelectedPref('kanto-pref')">送信</button>
   </div>
 
+  <!-- 中部 -->
   <button class="accordion" onclick="togglePanel('chubu')">中部地方</button>
   <div id="chubu" class="panel">
     <select id="chubu-pref">
@@ -96,6 +98,7 @@
     <button class="submit-button" onclick="submitSelectedPref('chubu-pref')">送信</button>
   </div>
 
+  <!-- 近畿 -->
   <button class="accordion" onclick="togglePanel('kinki')">近畿地方</button>
   <div id="kinki" class="panel">
     <select id="kinki-pref">
@@ -111,6 +114,7 @@
     <button class="submit-button" onclick="submitSelectedPref('kinki-pref')">送信</button>
   </div>
 
+  <!-- 中国・四国 -->
   <button class="accordion" onclick="togglePanel('chugoku')">中国・四国地方</button>
   <div id="chugoku" class="panel">
     <select id="chugoku-pref">
@@ -128,6 +132,7 @@
     <button class="submit-button" onclick="submitSelectedPref('chugoku-pref')">送信</button>
   </div>
 
+  <!-- 九州・沖縄 -->
   <button class="accordion" onclick="togglePanel('kyushu')">九州・沖縄地方</button>
   <div id="kyushu" class="panel">
     <select id="kyushu-pref">
@@ -142,11 +147,10 @@
       <option value="沖縄県">沖縄県</option>
     </select>
     <button class="submit-button" onclick="submitSelectedPref('kyushu-pref')">送信</button>
-
-　<!-- 最下部（海外ボタン） -->
-　<button class="area-button" onclick="submitArea('海外')">海外</button>
-
   </div>
+
+  <!-- 海外 -->
+  <button class="area-button" onclick="submitArea('海外')">海外</button>
 
   <script>
     const GAS_URL = "https://script.google.com/macros/s/【GASのURL】/exec"; // ←差し替え
