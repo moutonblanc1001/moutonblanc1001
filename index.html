@@ -46,9 +46,8 @@
 <body>
   <h2>お住まいの地域を選択してください</h2>
 
-  <!-- 即送信エリア -->
-  <button class="area-button" onclick="submitArea('北海道')">北海道</button>
-  <button class="area-button" onclick="submitArea('海外')">海外</button>
+  <!-- 最上部（北海道ボタン） -->
+　<button class="area-button" onclick="submitArea('北海道')">北海道</button>
 
   <!-- 折りたたみ形式の地方ブロック -->
   <button class="accordion" onclick="togglePanel('tohoku')">東北地方</button>
@@ -143,6 +142,10 @@
       <option value="沖縄県">沖縄県</option>
     </select>
     <button class="submit-button" onclick="submitSelectedPref('kyushu-pref')">送信</button>
+
+　<!-- 最下部（海外ボタン） -->
+　<button class="area-button" onclick="submitArea('海外')">海外</button>
+
   </div>
 
   <script>
