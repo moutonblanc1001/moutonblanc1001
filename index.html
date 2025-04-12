@@ -25,7 +25,6 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      text-align: center;
     }
     .area-button:hover, .accordion:hover {
       background-color: #45a049;
@@ -46,10 +45,8 @@
 <body>
   <h2>お住まいの地域を選択してください</h2>
 
-  <!-- 北海道 -->
   <button class="area-button" onclick="submitArea('北海道')">北海道</button>
 
-  <!-- 東北 -->
   <button class="accordion" onclick="togglePanel('tohoku')">東北地方</button>
   <div id="tohoku" class="panel">
     <select id="tohoku-pref">
@@ -64,23 +61,21 @@
     <button class="submit-button" onclick="submitSelectedPref('tohoku-pref')">送信</button>
   </div>
 
-  <!-- 関東 -->
   <button class="accordion" onclick="togglePanel('kanto')">関東地方</button>
   <div id="kanto" class="panel">
     <select id="kanto-pref">
       <option value="" disabled selected>都道府県を選択</option>
+      <option value="東京都">東京都</option>
+      <option value="神奈川県">神奈川県</option>
+      <option value="埼玉県">埼玉県</option>
+      <option value="千葉県">千葉県</option>
       <option value="茨城県">茨城県</option>
       <option value="栃木県">栃木県</option>
       <option value="群馬県">群馬県</option>
-      <option value="埼玉県">埼玉県</option>
-      <option value="千葉県">千葉県</option>
-      <option value="東京都">東京都</option>
-      <option value="神奈川県">神奈川県</option>
     </select>
     <button class="submit-button" onclick="submitSelectedPref('kanto-pref')">送信</button>
   </div>
 
-  <!-- 中部 -->
   <button class="accordion" onclick="togglePanel('chubu')">中部地方</button>
   <div id="chubu" class="panel">
     <select id="chubu-pref">
@@ -98,7 +93,6 @@
     <button class="submit-button" onclick="submitSelectedPref('chubu-pref')">送信</button>
   </div>
 
-  <!-- 近畿 -->
   <button class="accordion" onclick="togglePanel('kinki')">近畿地方</button>
   <div id="kinki" class="panel">
     <select id="kinki-pref">
@@ -114,7 +108,6 @@
     <button class="submit-button" onclick="submitSelectedPref('kinki-pref')">送信</button>
   </div>
 
-  <!-- 中国・四国 -->
   <button class="accordion" onclick="togglePanel('chugoku')">中国・四国地方</button>
   <div id="chugoku" class="panel">
     <select id="chugoku-pref">
@@ -132,7 +125,6 @@
     <button class="submit-button" onclick="submitSelectedPref('chugoku-pref')">送信</button>
   </div>
 
-  <!-- 九州・沖縄 -->
   <button class="accordion" onclick="togglePanel('kyushu')">九州・沖縄地方</button>
   <div id="kyushu" class="panel">
     <select id="kyushu-pref">
@@ -149,16 +141,20 @@
     <button class="submit-button" onclick="submitSelectedPref('kyushu-pref')">送信</button>
   </div>
 
-  <!-- 海外 -->
   <button class="area-button" onclick="submitArea('海外')">海外</button>
 
   <script>
-    const GAS_URL = "https://script.google.com/macros/s/【GASのURL】/exec"; // ←差し替え
-    const LIFF_ID = "【LIFF_ID】"; // ←差し替え
+    const GAS_URL = "https://script.google.com/macros/s/【GASのURL】/exec";
+    const LIFF_ID = "【LIFF_ID】";
 
     function togglePanel(id) {
-      const panel = document.getElementById(id);
-      panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
+      // すべてのパネルを閉じる
+      const allPanels = document.querySelectorAll(".panel");
+      allPanels.forEach(panel => panel.style.display = "none");
+
+      // 該当パネルのみ開く
+      const targetPanel = document.getElementById(id);
+      targetPanel.style.display = "block";
     }
 
     async function submitArea(area) {
@@ -182,17 +178,14 @@
           liff.login();
           return;
         }
-
         const profile = await liff.getProfile();
         const userId = profile.userId;
-
         const payload = { userId: userId, area: area };
         const res = await fetch(GAS_URL, {
           method: "POST",
           body: JSON.stringify(payload),
           headers: { "Content-Type": "application/json" }
         });
-
         if (res.ok) {
           alert("ご回答ありがとうございました！");
           liff.closeWindow();
