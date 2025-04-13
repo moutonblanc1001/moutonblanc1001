@@ -49,95 +49,89 @@
 
   <button class="accordion" onclick="togglePanel('tohoku')">東北地方</button>
   <div id="tohoku" class="panel">
-    <select id="tohoku-pref">
-      <option value="" disabled selected>都道府県を選択</option>
-      <option value="青森県">青森県</option>
-      <option value="岩手県">岩手県</option>
-      <option value="宮城県">宮城県</option>
-      <option value="秋田県">秋田県</option>
-      <option value="山形県">山形県</option>
-      <option value="福島県">福島県</option>
-    </select>
+    <div>
+      <button class="submit-button" onclick="submitArea('青森県')">青森県</button>
+      <button class="submit-button" onclick="submitArea('岩手県')">岩手県</button>
+      <button class="submit-button" onclick="submitArea('宮城県')">宮城県</button>
+      <button class="submit-button" onclick="submitArea('秋田県')">秋田県</button>
+      <button class="submit-button" onclick="submitArea('山形県')">山形県</button>
+      <button class="submit-button" onclick="submitArea('福島県')">福島県</button>
+    </div>
     <button class="submit-button" onclick="submitSelectedPref('tohoku-pref')">送信</button>
   </div>
 
   <button class="accordion" onclick="togglePanel('kanto')">関東地方</button>
   <div id="kanto" class="panel">
-    <select id="kanto-pref">
-      <option value="" disabled selected>都道府県を選択</option>
-      <option value="東京都">東京都</option>
-      <option value="神奈川県">神奈川県</option>
-      <option value="埼玉県">埼玉県</option>
-      <option value="千葉県">千葉県</option>
-      <option value="茨城県">茨城県</option>
-      <option value="栃木県">栃木県</option>
-      <option value="群馬県">群馬県</option>
-    </select>
+    <div>
+      <button class="submit-button" onclick="submitArea('東京都')">東京都</button>
+      <button class="submit-button" onclick="submitArea('神奈川県')">神奈川県</button>
+      <button class="submit-button" onclick="submitArea('埼玉県')">埼玉県</button>
+      <button class="submit-button" onclick="submitArea('千葉県')">千葉県</button>
+      <button class="submit-button" onclick="submitArea('茨城県')">茨城県</button>
+      <button class="submit-button" onclick="submitArea('栃木県')">栃木県</button>
+      <button class="submit-button" onclick="submitArea('群馬県')">群馬県</button>
+    </div>
     <button class="submit-button" onclick="submitSelectedPref('kanto-pref')">送信</button>
   </div>
 
   <button class="accordion" onclick="togglePanel('chubu')">中部地方</button>
   <div id="chubu" class="panel">
-    <select id="chubu-pref">
-      <option value="" disabled selected>都道府県を選択</option>
-      <option value="新潟県">新潟県</option>
-      <option value="富山県">富山県</option>
-      <option value="石川県">石川県</option>
-      <option value="福井県">福井県</option>
-      <option value="山梨県">山梨県</option>
-      <option value="長野県">長野県</option>
-      <option value="岐阜県">岐阜県</option>
-      <option value="静岡県">静岡県</option>
-      <option value="愛知県">愛知県</option>
-    </select>
+    <div>
+      <button class="submit-button" onclick="submitArea('新潟県')">新潟県</button>
+      <button class="submit-button" onclick="submitArea('富山県')">富山県</button>
+      <button class="submit-button" onclick="submitArea('石川県')">石川県</button>
+      <button class="submit-button" onclick="submitArea('福井県')">福井県</button>
+      <button class="submit-button" onclick="submitArea('山梨県')">山梨県</button>
+      <button class="submit-button" onclick="submitArea('長野県')">長野県</button>
+      <button class="submit-button" onclick="submitArea('岐阜県')">岐阜県</button>
+      <button class="submit-button" onclick="submitArea('静岡県')">静岡県</button>
+      <button class="submit-button" onclick="submitArea('愛知県')">愛知県</button>
+    </div>
     <button class="submit-button" onclick="submitSelectedPref('chubu-pref')">送信</button>
   </div>
 
   <button class="accordion" onclick="togglePanel('kinki')">近畿地方</button>
   <div id="kinki" class="panel">
-    <select id="kinki-pref">
-      <option value="" disabled selected>都道府県を選択</option>
-      <option value="三重県">三重県</option>
-      <option value="滋賀県">滋賀県</option>
-      <option value="京都府">京都府</option>
-      <option value="大阪府">大阪府</option>
-      <option value="兵庫県">兵庫県</option>
-      <option value="奈良県">奈良県</option>
-      <option value="和歌山県">和歌山県</option>
-    </select>
+    <div>
+      <button class="submit-button" onclick="submitArea('三重県')">三重県</button>
+      <button class="submit-button" onclick="submitArea('滋賀県')">滋賀県</button>
+      <button class="submit-button" onclick="submitArea('京都府')">京都府</button>
+      <button class="submit-button" onclick="submitArea('大阪府')">大阪府</button>
+      <button class="submit-button" onclick="submitArea('兵庫県')">兵庫県</button>
+      <button class="submit-button" onclick="submitArea('奈良県')">奈良県</button>
+      <button class="submit-button" onclick="submitArea('和歌山県')">和歌山県</button>
+    </div>
     <button class="submit-button" onclick="submitSelectedPref('kinki-pref')">送信</button>
   </div>
 
   <button class="accordion" onclick="togglePanel('chugoku')">中国・四国地方</button>
   <div id="chugoku" class="panel">
-    <select id="chugoku-pref">
-      <option value="" disabled selected>都道府県を選択</option>
-      <option value="鳥取県">鳥取県</option>
-      <option value="島根県">島根県</option>
-      <option value="岡山県">岡山県</option>
-      <option value="広島県">広島県</option>
-      <option value="山口県">山口県</option>
-      <option value="徳島県">徳島県</option>
-      <option value="香川県">香川県</option>
-      <option value="愛媛県">愛媛県</option>
-      <option value="高知県">高知県</option>
-    </select>
+    <div>
+      <button class="submit-button" onclick="submitArea('鳥取県')">鳥取県</button>
+      <button class="submit-button" onclick="submitArea('島根県')">島根県</button>
+      <button class="submit-button" onclick="submitArea('岡山県')">岡山県</button>
+      <button class="submit-button" onclick="submitArea('広島県')">広島県</button>
+      <button class="submit-button" onclick="submitArea('山口県')">山口県</button>
+      <button class="submit-button" onclick="submitArea('徳島県')">徳島県</button>
+      <button class="submit-button" onclick="submitArea('香川県')">香川県</button>
+      <button class="submit-button" onclick="submitArea('愛媛県')">愛媛県</button>
+      <button class="submit-button" onclick="submitArea('高知県')">高知県</button>
+    </div>
     <button class="submit-button" onclick="submitSelectedPref('chugoku-pref')">送信</button>
   </div>
 
   <button class="accordion" onclick="togglePanel('kyushu')">九州・沖縄地方</button>
   <div id="kyushu" class="panel">
-    <select id="kyushu-pref">
-      <option value="" disabled selected>都道府県を選択</option>
-      <option value="福岡県">福岡県</option>
-      <option value="佐賀県">佐賀県</option>
-      <option value="長崎県">長崎県</option>
-      <option value="熊本県">熊本県</option>
-      <option value="大分県">大分県</option>
-      <option value="宮崎県">宮崎県</option>
-      <option value="鹿児島県">鹿児島県</option>
-      <option value="沖縄県">沖縄県</option>
-    </select>
+    <div>
+      <button class="submit-button" onclick="submitArea('福岡県')">福岡県</button>
+      <button class="submit-button" onclick="submitArea('佐賀県')">佐賀県</button>
+      <button class="submit-button" onclick="submitArea('長崎県')">長崎県</button>
+      <button class="submit-button" onclick="submitArea('熊本県')">熊本県</button>
+      <button class="submit-button" onclick="submitArea('大分県')">大分県</button>
+      <button class="submit-button" onclick="submitArea('宮崎県')">宮崎県</button>
+      <button class="submit-button" onclick="submitArea('鹿児島県')">鹿児島県</button>
+      <button class="submit-button" onclick="submitArea('沖縄県')">沖縄県</button>
+    </div>
     <button class="submit-button" onclick="submitSelectedPref('kyushu-pref')">送信</button>
   </div>
 
